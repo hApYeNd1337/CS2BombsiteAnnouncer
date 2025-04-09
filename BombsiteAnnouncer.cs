@@ -1,4 +1,4 @@
-﻿using System.Text.Json.Serialization;
+using System.Text.Json.Serialization;
 using CounterStrikeSharp.API;
 using CounterStrikeSharp.API.Core;
 using CounterStrikeSharp.API.Core.Attributes.Registration;
@@ -129,8 +129,9 @@ public partial class BombsiteAnnouncer : BasePlugin, IPluginConfig<Config>
     }
 
     //---- P L U G I N - H O O O K S ----
-    [GameEventHandler(HookMode.Pre)]
+    [GameEventHandler(HookMode.Post)]
     public HookResult OnBombPlanted(EventBombPlanted @event, GameEventInfo info)
+
     {
 
         CCSPlayerController? player = @event.Userid;
